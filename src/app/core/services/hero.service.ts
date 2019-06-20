@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import { map } from 'rxjs/operators';
 import { Hero } from '../models/hero.model';
 import { HeroType } from '../models/herotypes.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +13,8 @@ export class HeroService {
 
   constructor(private http: HttpClient) { }
 
-  getHeroes() {
+  getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(`${this.heroesBaseUrl}/heroes`);
-    // .map((res: Response) => res.json().response);
   }
 
   getHeroTypes() {
@@ -32,6 +31,6 @@ export class HeroService {
   }
 
   deleteHero(hero: Hero) {
-    return this.http.delete <Hero>(`${this.heroesBaseUrl}/heroes/${hero.id}`);
+    return this.http.delete<Hero>(`${this.heroesBaseUrl}/heroes/${hero.id}`);
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeroService } from './core/services/hero.service';
 import { Hero } from './core/models/hero.model';
 import { HeroType } from './core/models/herotypes.model';
@@ -9,7 +9,7 @@ import { HeroType } from './core/models/herotypes.model';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'heroes-app-angular';
   hs: HeroService;
   Heroes: Hero[] = [];
@@ -19,9 +19,9 @@ export class AppComponent {
     this.hs = heroService;
   }
 
-  onClickMe() {
+  refreshLists() {
     this.hs.getHeroes().subscribe(
-      data => {        
+      data => {
         console.log(data);
         console.log(data[0].name);
         this.Heroes = data;
@@ -30,12 +30,20 @@ export class AppComponent {
     );
 
     this.hs.getHeroTypes().subscribe(
-      data => {        
+      data => {
         console.log(data);
         console.log(data[0].name);
         this.HeroTypes = data;
       },
       err => console.log(err)
     );
+  }
+
+  ngOnInit() {
+    this.refreshLists();
+  }
+
+  onClickMe() {
+    this.refreshLists();
   }
 }
