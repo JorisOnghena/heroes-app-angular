@@ -18,4 +18,10 @@
   </li>
 </ul>
 
+<button (click)="onClickMe()">Click me!</button>
+
+<div *ngFor="let hero of Heroes">
+  {{hero?.name}}
+</div>
+
 <router-outlet></router-outlet>
