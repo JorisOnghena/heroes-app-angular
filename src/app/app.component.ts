@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HeroService } from './core/services/hero.service';
 import { Hero } from './core/models/hero.model';
 import { HeroType } from './core/models/herotypes.model';
+import { AuthService } from './core/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +13,13 @@ import { HeroType } from './core/models/herotypes.model';
 export class AppComponent implements OnInit {
   title = 'heroes-app-angular';
   hs: HeroService;
+  auth: AuthService;
   Heroes: Hero[] = [];
   HeroTypes: HeroType[] = [];
 
-  constructor(heroService: HeroService) {
+  constructor(heroService: HeroService, authService: AuthService) {
     this.hs = heroService;
+    this.auth = authService;
   }
 
   refreshLists() {
@@ -45,5 +48,12 @@ export class AppComponent implements OnInit {
 
   onClickMe() {
     this.refreshLists();
+  }
+
+  onClickLogin() {
+    this.auth.login("test", "testing").subscribe(data => {
+      console.log(data);
+      localStorage.setItem('id_token', data);
+    });
   }
 }
