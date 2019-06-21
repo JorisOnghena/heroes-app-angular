@@ -5,7 +5,7 @@ import { HeroType } from './core/models/herotypes.model';
 import { AuthService } from './core/services/auth.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'hero-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
