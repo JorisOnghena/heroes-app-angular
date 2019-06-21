@@ -51,7 +51,7 @@ export class AppComponent implements OnInit {
   }
 
   onClickLogin() {
-    this.auth.login("test", "testing").subscribe(data => {
+    this.auth.login('test', 'testing').subscribe(data => {
       console.log(data);
       localStorage.setItem('id_token', data);
     });
