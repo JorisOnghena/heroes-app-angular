@@ -13,18 +13,18 @@
         </div>
         <div class="card-body">
           <form></form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <button class="btn btn-primary" (click)="onClickLogin()">Login!</button>
-          
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <button class="btn btn-primary" (click)="onClickLogin()">Login!</button>
+
         </div>
       </div>
     </div>
@@ -37,16 +37,19 @@
 
   <!-- Hero list -->
   <div class="row">
-    <div class="col-md-12">
-      <ng-template [ngIf]="Heroes" [ngIfElse]="loading">
+
+    <ng-template [ngIf]="Heroes" [ngIfElse]="loading">
       <div *ngFor="let hero of Heroes">
-        <hero-herocard [hero]="hero"></hero-herocard>
+        <div class="col-md-1">
+          <hero-herocard [hero]="hero"></hero-herocard>
+        </div>
       </div>
     </ng-template>
     <ng-template #loading>
+      <div class="col-md-12">
         <div>Loading...</div>
+      </div>
     </ng-template>
-    </div>
   </div>
 
   <router-outlet></router-outlet>
