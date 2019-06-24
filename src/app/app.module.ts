@@ -12,6 +12,7 @@ import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MessageboxComponent } from './components/messagebox/messagebox.component';
+import { HerocardComponent } from './components/herocard/herocard.component';
 import { GeneralErrorHandler } from './shared/GeneralErrorHandler';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { GeneralErrorHandler } from './shared/GeneralErrorHandler';
     AppComponent,
     NavbarComponent,
     MessageboxComponent,
+    HerocardComponent
   ],
   imports: [
     BrowserModule,

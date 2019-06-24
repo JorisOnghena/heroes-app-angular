@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;">
+
+    <img *ngIf="hero.type == 'Wizard'" src="./assets/images/wizard.jpg" class="card-img-top" alt="Wizard">
+    <img *ngIf="hero.type == 'Paladin'" src="./assets/images/paladin.jpg" class="card-img-top" alt="Paladin">
+
+    <div class="card-body">
+      <h5 class="card-title">{{hero.name}}</h5>
+      <p><i>{{hero.type}}</i></p>
+      <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>-->
+    </div>
+  </div>
