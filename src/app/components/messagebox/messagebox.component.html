@@ -1,0 +1,7 @@
+<div *ngIf="message" class="alert {{severity}}" role="alert">
+  <button *ngIf="dismissible" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <h4 *ngIf="title" class="alert-heading">{{title}}</h4>
+  <p>{{message}}</p>
+</div>

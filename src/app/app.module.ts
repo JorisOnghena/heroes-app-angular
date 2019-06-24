@@ -11,12 +11,14 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MessageboxComponent } from './components/messagebox/messagebox.component';
 import { GeneralErrorHandler } from './shared/GeneralErrorHandler';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    MessageboxComponent,
   ],
   imports: [
     BrowserModule,
