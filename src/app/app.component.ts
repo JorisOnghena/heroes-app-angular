@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HeroService } from './core/services/hero.service';
 import { Hero } from './core/models/hero.model';
 import { HeroType } from './core/models/herotypes.model';
 import { AuthService } from './core/services/auth.service';
+import { MessageboxComponent, Severity } from './components/messagebox/messagebox.component';
 
 @Component({
   selector: 'hero-root',
@@ -16,6 +17,8 @@ export class AppComponent implements OnInit {
   auth: AuthService;
   Heroes: Hero[] = [];
   HeroTypes: HeroType[] = [];
+
+  @ViewChild(MessageboxComponent, { static: false }) alert: MessageboxComponent;
 
   constructor(heroService: HeroService, authService: AuthService) {
     this.hs = heroService;
@@ -48,6 +51,10 @@ export class AppComponent implements OnInit {
 
   onClickMe() {
     this.refreshLists();
+    this.alert.title = 'Success !!!';
+    this.alert.message = 'Testing 1..2...3';
+    this.alert.dismissible = false;
+    this.alert.severity = Severity.Success;
   }
 
   onClickLogin() {
