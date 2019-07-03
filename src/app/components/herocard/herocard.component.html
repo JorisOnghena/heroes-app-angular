@@ -1,12 +1,19 @@
 <div class="card" style="width: 18rem;">
 
-    <img *ngIf="hero.type == 'Wizard'" src="assets/images/wizard.jpg" class="card-img-top" alt="Wizard">
-    <img *ngIf="hero.type == 'Paladin'" src="assets/images/paladin.jpg" class="card-img-top" alt="Paladin">
+  <img *ngIf="hero.type == 'Wizard'" src="assets/images/wizard.jpg" class="card-img-top" alt="Wizard">
+  <img *ngIf="hero.type == 'Paladin'" src="assets/images/paladin.jpg" class="card-img-top" alt="Paladin">
 
-    <div class="card-body">
-      <h5 class="card-title">{{hero.name}}</h5>
-      <p><i>{{hero.type}}</i></p>
-      <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <div class="card-body">
+    <ul class="rating">
+      <li [ngClass]="{'disable': hero.rating<1}"><i class="fa fa-star fa-2x" aria-hidden="true"></i></li>
+      <li [ngClass]="{'disable': hero.rating<2}"><i class="fa fa-star fa-2x" aria-hidden="true"></i></li>
+      <li [ngClass]="{'disable': hero.rating<3}"><i class="fa fa-star fa-2x" aria-hidden="true"></i></li>
+      <li [ngClass]="{'disable': hero.rating<4}"><i class="fa fa-star fa-2x" aria-hidden="true"></i></li>
+      <li [ngClass]="{'disable': hero.rating<5}"><i class="fa fa-star fa-2x" aria-hidden="true"></i></li>
+    </ul>
+    <h5 class="card-title">{{hero.name}}</h5>
+    <p><i>{{hero.type}}</i></p>
+    <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="#" class="btn btn-primary">Go somewhere</a>-->
-    </div>
   </div>
+</div>
