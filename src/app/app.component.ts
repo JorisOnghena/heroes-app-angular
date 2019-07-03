@@ -13,22 +13,14 @@ import { MessageboxComponent, Severity } from './components/messagebox/messagebo
 
 export class AppComponent implements OnInit {
   title = 'heroes-app-angular';
-  hs: HeroService;
-  Heroes: Hero[] = [];
-  HeroTypes: HeroType[] = [];
+  
+  //HeroTypes: HeroType[] = [];
 
   constructor() {    
   }
 
-  refreshLists() {
-    this.hs.getHeroes().subscribe(
-      data => {
-        console.log(data);
-        console.log(data[0].name);
-        this.Heroes = data;
-      },
-      err => console.log(err)
-    );
+  /*refreshLists() {
+    
 
     this.hs.getHeroTypes().subscribe(
       data => {
@@ -38,7 +30,7 @@ export class AppComponent implements OnInit {
       },
       err => console.log(err)
     );
-  }
+  }*/
 
   ngOnInit() {
    // this.refreshLists();
