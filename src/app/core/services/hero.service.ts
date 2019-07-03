@@ -17,6 +17,10 @@ export class HeroService {
     return this.http.get<Hero[]>(`${this.heroesBaseUrl}/heroes`);
   }
 
+  getHero(id: number): Observable<Hero> {
+    return this.http.get<Hero>(`${this.heroesBaseUrl}/hero/${id}`);
+  }
+
   getHeroTypes() {
     return this.http.get<HeroType[]>(`${this.heroesBaseUrl}/herotypes`);
     // .map((res: Response) => res.json().response);
