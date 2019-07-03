@@ -1,0 +1,38 @@
+<div class="row justify-content-center align-items-center">
+  <div class="col-md-5">
+    <hero-messagebox #messageLogin></hero-messagebox>
+  </div>
+</div>
+<div class="row justify-content-center align-items-center">
+  <div class="col-md-5">
+    <div class="card">
+      <div class="card-header">
+        Login
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <br>
+        <ng-template [ngIf]="!showLoading" [ngIfElse]="loading">
+          <div class="row justify-content-center align-items-center">
+            <button class="btn btn-primary" (click)="onClickLogin()">Login!</button>
+          </div>
+        </ng-template>
+        <ng-template #loading>
+          <div class="row justify-content-center align-items-center">
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>

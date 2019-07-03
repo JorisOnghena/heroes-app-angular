@@ -14,13 +14,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MessageboxComponent } from './components/messagebox/messagebox.component';
 import { HerocardComponent } from './components/herocard/herocard.component';
 import { GeneralErrorHandler } from './shared/GeneralErrorHandler';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MessageboxComponent,
-    HerocardComponent
+    HerocardComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

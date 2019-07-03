@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   // { path: 'crisis-center', component: CrisisListComponent },
@@ -9,10 +10,16 @@ const routes: Routes = [
     component: HeroListComponent,
     data: { title: 'Heroes List' }
   },*/
+  {
+    path: 'login',
+    component: LoginComponent,
+    data: { title: 'Login' }
+  },
   { path: '',
-    redirectTo: '/heroes',
+    redirectTo: '/login',
     pathMatch: 'full'
-  }// ,
+  }
+  // ,
   // { path: '**', component: PageNotFoundComponent }
 ];
 
