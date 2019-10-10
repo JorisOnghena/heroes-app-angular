@@ -11,11 +11,9 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   @ViewChild('messageLogin', { static: false }) alert: MessageboxComponent;
-  auth: AuthService;
   showLoading = false;
 
-  constructor(authService: AuthService, public router: Router) {
-    this.auth = authService;
+  constructor(public authService: AuthService, public router: Router) {
   }
 
   ngOnInit() {
@@ -26,16 +24,16 @@ export class LoginComponent implements OnInit {
     this.alert.message = '';
     this.alert.title = '';
 
-    this.auth.login('test', 'testing').subscribe(data => {
+    this.authService.login('test', 'testing').subscribe(data => {
       console.log(data);
-      localStorage.setItem('id_token', data);
+      localStorage.setItem('id_token', data.JWtToken);
       this.alert.title = 'Success !!!';
       this.alert.message = 'Welcome';
       this.alert.dismissible = false;
       this.alert.severity = Severity.Success;
       this.router.navigate(['heroes']);
     },
-    err =>{
+    err => {
       console.log(err);
       this.alert.message = err;
       this.alert.title = 'Could not log you in !!!';

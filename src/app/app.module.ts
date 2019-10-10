@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { HerocardComponent } from './components/herocard/herocard.component';
 import { GeneralErrorHandler } from './shared/GeneralErrorHandler';
 import { HerolistComponent } from './components/herolist/herolist.component';
 import { LoginComponent } from './components/login/login.component';
+import { HerodetailComponent } from './components/herodetail/herodetail.component';
+import { AuthGuard } from './core/services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -25,15 +28,19 @@ import { LoginComponent } from './components/login/login.component';
     HerocardComponent,
     HerolistComponent,
     LoginComponent,
+    HerodetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     HeroService,
     AuthService,
+    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,

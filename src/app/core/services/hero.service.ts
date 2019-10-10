@@ -18,7 +18,7 @@ export class HeroService {
   }
 
   getHero(id: number): Observable<Hero> {
-    return this.http.get<Hero>(`${this.heroesBaseUrl}/hero/${id}`);
+    return this.http.get<Hero>(`${this.heroesBaseUrl}/heroes/${id}`);
   }
 
   getHeroTypes() {
