@@ -10,7 +10,7 @@ import { MessageboxComponent, Severity } from '../messagebox/messagebox.componen
 })
 export class HerolistComponent implements OnInit, AfterViewInit {
 
-  @ViewChild('herolistMessage', { static: false }) alert: MessageboxComponent;
+  @ViewChild('herolistMessage') alert: MessageboxComponent;
   hs: HeroService;
   Heroes: Hero[];
 

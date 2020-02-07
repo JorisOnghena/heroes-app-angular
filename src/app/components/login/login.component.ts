@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  @ViewChild('messageLogin', { static: false }) alert: MessageboxComponent;
+  @ViewChild('messageLogin') alert: MessageboxComponent;
   showLoading = false;
 
   constructor(public authService: AuthService, public router: Router) {

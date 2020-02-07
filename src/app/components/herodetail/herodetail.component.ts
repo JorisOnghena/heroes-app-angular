@@ -13,7 +13,7 @@ import { MessageboxComponent, Severity } from '../messagebox/messagebox.componen
 })
 export class HerodetailComponent implements OnInit {
 
-  @ViewChild('messageDetail', { static: false }) alert: MessageboxComponent;
+  @ViewChild('messageDetail') alert: MessageboxComponent;
   model = new Hero();
   types: HeroType[];
 
